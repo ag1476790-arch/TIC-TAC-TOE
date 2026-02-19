@@ -27,7 +27,8 @@ Using the Minimax algorithm, the AI evaluates all possible future game states an
 
 ## 🎮 Game Rules
 
-- Human Player: **X**
-- AI Player: **O**
+- Human Player will choose X or O
+- then AI will choose other
+
 - Board positions are numbered from 0 to 8
 
