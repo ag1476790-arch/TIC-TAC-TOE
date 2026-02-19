@@ -1,6 +1,6 @@
 import math
 
-# Initialize board
+
 board = [" " for _ in range(9)]
 
 HUMAN = "X"
@@ -17,9 +17,9 @@ def available_moves():
 
 def winner(player):
     win_conditions = [
-        [0,1,2], [3,4,5], [6,7,8],  # rows
-        [0,3,6], [1,4,7], [2,5,8],  # cols
-        [0,4,8], [2,4,6]            # diagonals
+        [0,1,2], [3,4,5], [6,7,8],  
+        [0,3,6], [1,4,7], [2,5,8],  
+        [0,4,8], [2,4,6]            
     ]
     return any(all(board[i] == player for i in combo) for combo in win_conditions)
 
@@ -66,6 +66,7 @@ def ai_move():
     board[best_move] = AI
 
 def human_move():
+    
     move = int(input("Enter your move (0-8): "))
     if board[move] == " ":
         board[move] = HUMAN
@@ -73,11 +74,15 @@ def human_move():
         print("Invalid move!")
         human_move()
 
-# Game loop
 print("Welcome to Tic-Tac-Toe!")
 print_board()
-
+HUMAN=input("Enter your Choice(X|O):")
+if(HUMAN=="X"):
+    AI="O"
+else:
+    HUMAN="X"
 while True:
+    
     human_move()
     print_board()
 
